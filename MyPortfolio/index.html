@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ujjwal Sharma | Web Developer & AIML Student</title>
+<meta name="description" content="Portfolio of Ujjwal Sharma, B.Tech CSE (AIML) student and web developer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050607; --bg2:#0d1013; --card:#12161a; --line:#1f262c;
+  --text:#e8eef2; --muted:#8b98a3; --accent:#10f0a0; --accent-dim:rgba(16,240,160,.12);
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Roboto,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+section{padding:6rem 0}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:2rem}
+h2::after{content:"";display:block;width:48px;height:3px;background:var(--accent);margin-top:.7rem;border-radius:2px}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:10;background:rgba(5,6,7,.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-weight:800;letter-spacing:-.02em}
+.logo span{color:var(--accent)}
+nav ul{display:flex;gap:1.6rem;list-style:none}
+nav ul a{color:var(--muted);font-size:.92rem;transition:color .2s}
+nav ul a:hover{color:var(--accent)}
+
+/* hero */
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:7rem 0 4rem;overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%}
+#hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,transparent 20%,var(--bg) 85%);pointer-events:none}
+.hero-in{position:relative;z-index:1}
+.hello{color:var(--accent);font-weight:500;margin-bottom:.8rem}
+h1{font-size:clamp(3rem,10vw,6.5rem);line-height:1;font-weight:800;letter-spacing:-.04em}
+.role{margin-top:1.4rem;font-size:clamp(1rem,2.4vw,1.3rem);color:var(--muted);max-width:40ch}
+.typed{color:var(--text);border-right:2px solid var(--accent);padding-right:4px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{border-color:transparent}}
+.cta{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.4rem}
+.btn{display:inline-block;padding:.85rem 1.7rem;border-radius:999px;font-weight:600;font-size:.95rem;border:1px solid var(--accent);transition:transform .2s,box-shadow .2s,background .2s,color .2s}
+.btn.primary{background:var(--accent);color:#031a11}
+.btn.primary:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(16,240,160,.35)}
+.btn.ghost{color:var(--accent)}
+.btn.ghost:hover{background:var(--accent-dim);transform:translateY(-3px)}
+
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:start}
+.about p{color:var(--muted);margin-bottom:1rem;max-width:62ch}
+.facts{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem}
+.facts dl{display:grid;grid-template-columns:auto 1fr;gap:.7rem 1.2rem}
+.facts dt{color:var(--muted);font-size:.9rem}
+.facts dd{font-weight:500}
+
+/* education */
+#education{background:var(--bg2);border-block:1px solid var(--line)}
+.timeline{border-left:2px solid var(--line);padding-left:2rem;display:grid;gap:1.8rem}
+.edu{position:relative}
+.edu::before{content:"";position:absolute;left:calc(-2rem - 7px);top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--bg2);border:2px solid var(--accent)}
+.edu.now::before{background:var(--accent);box-shadow:0 0 0 5px var(--accent-dim)}
+.edu h3{font-size:1.1rem}
+.edu p{color:var(--muted);font-size:.95rem}
+.badge{display:inline-block;margin-top:.5rem;padding:.2rem .7rem;border-radius:999px;font-size:.8rem;background:var(--accent-dim);color:var(--accent)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.skills h3{font-size:1.05rem;margin-bottom:1.2rem}
+.bar{margin-bottom:1.3rem}
+.bar-top{display:flex;justify-content:space-between;font-size:.92rem;margin-bottom:.45rem}
+.track{height:8px;background:var(--card);border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.fill{height:100%;width:0;background:linear-gradient(90deg,#0aa876,var(--accent));border-radius:99px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.tags{display:flex;flex-wrap:wrap;gap:.7rem}
+.tag{padding:.5rem 1rem;border:1px solid var(--line);background:var(--card);border-radius:999px;font-size:.9rem;color:var(--muted);transition:all .2s;cursor:default}
+.tag:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px);box-shadow:0 6px 20px rgba(16,240,160,.15)}
+.note{color:var(--muted);font-size:.92rem;margin-top:1.2rem;max-width:44ch}
+
+/* contact */
+#contact{background:var(--bg2);border-top:1px solid var(--line);text-align:center}
+#contact h2::after{margin-inline:auto}
+#contact p{color:var(--muted);max-width:50ch;margin:0 auto 2rem}
+.links{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem}
+footer{padding:1.6rem 0;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+
+@media (max-width:760px){
+  nav ul{gap:1rem}
+  nav ul li:nth-child(n+4){display:none}
+  .about,.skills{grid-template-columns:1fr}
+  section{padding:4.5rem 0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#hero" class="logo">ujjwal<span>.dev</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header id="hero">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <p class="hello">Hi, I'm</p>
+    <h1>Ujjwal Sharma</h1>
+    <p class="role">B.Tech CSE (AIML) Student | Web Developer | Tech &amp; Gaming Enthusiast</p>
+    <p class="role">Currently learning: <span class="typed" id="typed"></span></p>
+    <div class="cta">
+      <a href="#skills" class="btn primary">View My Work</a>
+      <a href="#contact" class="btn ghost">Contact Me</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About me</h2>
+    <div class="about">
+      <div>
+        <p>I'm an 18-year-old student from Agra, and I love software development. What keeps me going is a simple curiosity: I want to build things and understand how they work.</p>
+        <p>I'm exploring Artificial Intelligence and Machine Learning alongside my web development, and I want to combine the two into projects that are useful and fun to use.</p>
+        <p>Away from the screen (or sometimes still in front of it), I'm a big cricket fan and I enjoy playing video games.</p>
+      </div>
+      <div class="facts">
+        <dl>
+          <dt>Name</dt><dd>Ujjwal Sharma</dd>
+          <dt>Age</dt><dd>18</dd>
+          <dt>Hometown</dt><dd>Agra, India</dd>
+          <dt>Lives in</dt><dd>Ghaziabad, India</dd>
+          <dt>Studying</dt><dd>B.Tech CSE (AIML)</dd>
+          <dt>Off-screen</dt><dd>Cricket</dd>
+          <dt>On-screen</dt><dd>Video games</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="edu now">
+        <h3>B.Tech in Computer Science and Engineering (AIML)</h3>
+        <p>KIET Group of Institutions (Deemed to be University)</p>
+        <span class="badge">Currently pursuing</span>
+      </div>
+      <div class="edu">
+        <h3>Class 12th (PCM)</h3>
+        <p>Gayatri Public School, Agra</p>
+        <span class="badge">88%</span>
+      </div>
+      <div class="edu">
+        <h3>Class 10th</h3>
+        <p>Gayatri Public School, Agra</p>
+        <span class="badge">88%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div>
+        <h3>Where I'm building today</h3>
+        <div class="bar"><div class="bar-top"><span>HTML</span><span>80%</span></div><div class="track"><div class="fill" data-w="80"></div></div></div>
+        <div class="bar"><div class="bar-top"><span>CSS</span><span>70%</span></div><div class="track"><div class="fill" data-w="70"></div></div></div>
+        <p class="note">Responsive layouts, clean semantic markup and smooth interface details.</p>
+      </div>
+      <div>
+        <h3>What I'm exploring next</h3>
+        <div class="tags">
+          <span class="tag">JavaScript</span>
+          <span class="tag">Python</span>
+          <span class="tag">Advanced web development</span>
+          <span class="tag">Artificial Intelligence</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Data structures</span>
+          <span class="tag">Git &amp; GitHub</span>
+        </div>
+        <p class="note">I'm curious about the advanced side of development and about how AI and ML models actually learn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact me</h2>
+    <p>Want to collaborate, talk tech or cricket, or just say hi? Reach out through any of these.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:your.email@example.com">Email me</a>
+      <a class="btn ghost" href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; <span id="yr"></span> Ujjwal Sharma. Built with HTML, CSS and JavaScript.</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* Typing line */
+(function(){
+  const words=['Web Development','Artificial Intelligence','Machine Learning','Advanced Frontend'];
+  const el=document.getElementById('typed');
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=words[0];return;}
+  let w=0,c=0,del=false;
+  (function tick(){
+    const word=words[w];
+    el.textContent=word.slice(0,c);
+    if(!del&&c===word.length){del=true;return setTimeout(tick,1400);}
+    if(del&&c===0){del=false;w=(w+1)%words.length;}
+    c+=del?-1:1;
+    setTimeout(tick,del?40:80);
+  })();
+})();
+
+/* Neural-network style background */
+(function(){
+  const cv=document.getElementById('net'),ctx=cv.getContext('2d');
+  const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W,H,pts=[],mouse={x:-999,y:-999};
+  function size(){
+    const r=cv.getBoundingClientRect(),d=devicePixelRatio||1;
+    W=r.width;H=r.height;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0);
+    const n=Math.min(90,Math.floor(W*H/14000));
+    pts=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35}));
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(const p of pts){
+      if(!still){p.x+=p.vx;p.y+=p.vy;}
+      if(p.x<0||p.x>W)p.vx*=-1;
+      if(p.y<0||p.y>H)p.vy*=-1;
+    }
+    for(let i=0;i<pts.length;i++){
+      const a=pts[i];
+      ctx.fillStyle='rgba(16,240,160,.8)';
+      ctx.beginPath();ctx.arc(a.x,a.y,1.8,0,6.283);ctx.fill();
+      for(let j=i+1;j<pts.length;j++){
+        const b=pts[j],dx=a.x-b.x,dy=a.y-b.y,dist=Math.hypot(dx,dy);
+        if(dist<130){ctx.strokeStyle='rgba(16,240,160,'+(.28*(1-dist/130))+')';ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
+      }
+      const md=Math.hypot(a.x-mouse.x,a.y-mouse.y);
+      if(md<160){ctx.strokeStyle='rgba(16,240,160,'+(.6*(1-md/160))+')';ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(mouse.x,mouse.y);ctx.stroke();}
+    }
+    if(!still)requestAnimationFrame(draw);
+  }
+  addEventListener('resize',()=>{size();if(still)draw();});
+  cv.parentElement.addEventListener('mousemove',e=>{const r=cv.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top;});
+  cv.parentElement.addEventListener('mouseleave',()=>{mouse.x=mouse.y=-999;});
+  size();draw();
+})();
+
+/* Skill bars fill when scrolled into view */
+(function(){
+  const bars=document.querySelectorAll('.fill');
+  const fill=b=>b.style.width=b.dataset.w+'%';
+  if(!('IntersectionObserver' in window)){bars.forEach(fill);return;}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){fill(e.target);io.unobserve(e.target);}}),{threshold:.4});
+  bars.forEach(b=>io.observe(b));
+})();
+</script>
+</body>
+</html>
