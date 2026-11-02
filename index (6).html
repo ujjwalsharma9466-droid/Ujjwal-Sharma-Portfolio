@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ujjwal Sharma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<nav><a href="#top">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#connect">Contact</a></nav>
+
+<header class="hero" id="top">
+<img src="photo.jpg" alt="Portrait of Ujjwal Sharma">
+<h1>Ujjwal Sharma</h1>
+<p class="role">Web Developer</p>
+<p class="tag">I build web apps that work.</p>
+<p class="sub">Interested in working together? Get in touch via email or social links below.</p>
+<div class="btns">
+<a class="btn p" href="mailto:ujjwalsharma9466@gmail.com">Send an email</a>
+<a class="btn" href="https://www.instagram.com/abhieie.06" target="_blank" rel="noopener">Instagram</a>
+<button class="btn" id="heroChat">Ask my AI</button>
+</div>
+</header>
+
+<section id="about">
+<h2>About</h2>
+<p>I’m Ujjwal Sharma, a first-year B.Tech student in Artificial Intelligence &amp; Machine Learning at KIET Group of Institutions (Deemed to be University). I specialise in frontend and backend web development, web app dashboards and debugging.</p>
+<p>Outside class I love developing tricky projects, playing cricket and gaming. I’m an avid hackathon and coding-competition participant.</p>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="chips"><span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Node.js</span><span class="chip">Python</span><span class="chip">C++</span></div>
+<div class="item" style="margin-top:14px"><h3>What I do best</h3><p>Frontend and backend web development, web app dashboards, and debugging.</p></div>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<div class="item"><h3>B.Tech, Artificial Intelligence &amp; Machine Learning</h3><div class="d">KIET Group of Institutions (Deemed to be University) · First year</div></div>
+<div class="item"><h3>Class 12 · PCM</h3><div class="d">Gayatri Public School, Agra</div><p>Physics, Chemistry, Mathematics, English and Physical Education.</p></div>
+<div class="item"><h3>Class 10</h3><div class="d">Gayatri Public School, Agra</div></div>
+<div class="stats"><div><b>88%</b><span>Class 10</span></div><div><b>88%</b><span>Class 12</span></div></div>
+</section>
+
+<section id="connect">
+<h2>Connect</h2>
+<div class="btns" style="justify-content:flex-start">
+<a class="btn p" href="https://wa.me/917452046844" target="_blank" rel="noopener">WhatsApp: 7452046844</a>
+<a class="btn" href="mailto:ujjwalsharma9466@gmail.com">ujjwalsharma9466@gmail.com</a>
+<a class="btn" href="https://www.instagram.com/abhieie.06" target="_blank" rel="noopener">@abhieie.06</a>
+</div>
+</section>
+<footer>© Ujjwal Sharma</footer>
+</div>
+
+<a class="fab" id="wa" href="https://wa.me/917452046844?text=Hi%20Ujjwal%2C%20I%20saw%20your%20portfolio." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.300 1.200-1.800 1.200-.5.100-1 .2-3.300-.7-2.800-1.100-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 1.900c.1.200.1.300 0 .5l-.4.600c-.1.100-.3.300-.1.600.600 1 1.300 1.800 2.300 2.300.3.200.5.100.6-.1l.8-1c.2-.2.400-.2.600-.1l1.800.9c.3.100.4.200.5.300.1.200.1.800-.1 1.400z"/></svg>WhatsApp</a>
+<button class="fab" id="cb" aria-expanded="false" aria-controls="panel">Ask my AI</button>
+
+<div id="panel" role="dialog" aria-label="Chat assistant">
+<div class="ph"><div><b>Ujjwal’s assistant</b><small>Ask about his skills, education or projects</small></div><button id="x" aria-label="Close chat">×</button></div>
+<div id="log" aria-live="polite"></div>
+<div class="sug" id="sug"></div>
+<div class="in"><input id="q" placeholder="Ask something about Ujjwal" aria-label="Your message" autocomplete="off"><button class="btn p" id="send">Send</button></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
